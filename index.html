@@ -44,19 +44,42 @@
             font-size: 1.3em;
         }
 
+        .section h2 a {
+            color: #f49541;
+            text-decoration: none;
+            display: block;
+            padding: 12px 16px;
+            background: #fef3eb;
+            border-left: 4px solid #f49541;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin: -15px -20px 15px -20px;
+        }
+
+        .section h2 a:hover {
+            background: #fef9f5;
+            border-left-color: #e27f2e;
+            color: #e27f2e;
+            padding-left: 20px;
+        }
+
         .section p {
             margin: 8px 0;
         }
 
         .download-link {
-            display: inline-block;
+            display: block;
             background: #f49541;
             color: white;
-            padding: 8px 16px;
+            padding: 12px 16px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 500;
-            margin: 10px 5px;
+            margin: 15px 0;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .download-link:hover {
@@ -101,12 +124,24 @@
     </div>
 
     <div class="section">
-        <h2>Available Downloads</h2>
+        <h2><a href="/releases/">1. Official Releases</a></h2>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em;">
+            Find all app releases here. This directory contains the stable, production-ready versions of AliasVault that are suitable for general use. These releases mirror the official releases from the GitHub repository.
+        </p>
+    </div>
 
-        <p style="margin-top: 20px;"><strong>Development & Testing:</strong></p>
-        <div class="download-grid">
-            <a href="/i18n/" class="download-link">Translation Testing</a>
-        </div>
+    <div class="section">
+        <h2><a href="/main/">2. Nightly Builds</a></h2>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em;">
+            These are periodic automatic builds of the main branch. Nightly builds are generated automatically on a regular schedule (multiple times per day) and include the latest code changes from the main development branch. These builds are intended for developers and advanced users who want to test new features or bug fixes before they are included in official releases. Please note that nightly builds may be unstable and are not recommended for production use.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2><a href="/i18n/">3. Crowdin Translation Testing</a></h2>
+        <p style="margin-top: 10px; color: #666; font-size: 0.9em;">
+            These builds contain the latest translations made in Crowdin and allow for testing translation changes before they are merged into the main branch. These builds are specifically designed for translators, localization teams, and users who want to verify that translations appear correctly in the application interface. They include all pending translation updates from the Crowdin project, enabling early detection of issues such as text overflow, missing translations, or formatting problems. Help us improve AliasVault by testing these builds in your language!
+        </p>
     </div>
 
     <div class="section">

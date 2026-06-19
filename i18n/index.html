@@ -4,121 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AliasVault - Translation Testing</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fafafa;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .header h1 {
-            margin: 0;
-            color: #f49541;
-            font-size: 1.8em;
-            flex: 1;
-            text-align: center;
-        }
-
-        .section {
-            background: white;
-            margin: 15px 0;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .section h2 {
-            margin: 0 0 10px 0;
-            color: #1f2937;
-            font-size: 1.3em;
-        }
-
-        .section p {
-            margin: 8px 0;
-        }
-
-        .test-link {
-            display: inline-block;
-            background: #f49541;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 10px 0;
-        }
-
-        .test-link:hover {
-            background: #e27f2e;
-        }
-
-        .note {
-            background: #fef3eb;
-            border-left: 3px solid #f49541;
-            padding: 10px 15px;
-            margin: 10px 0;
-            font-size: 0.95em;
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            background: white;
-        }
-
-        .link {
-            color: #f49541;
-            text-decoration: none;
-        }
-
-        .link:hover {
-            text-decoration: underline;
-        }
-
-        .back-button {
-            display: inline-block;
-            color: #f49541;
-            text-decoration: none;
-            padding: 8px 16px;
-            font-weight: 500;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-        }
-
-        .back-button:hover {
-            background: #fef3eb;
-            color: #e27f2e;
-        }
-
-        .back-button::before {
-            content: "← ";
-            margin-right: 4px;
-        }
-    </style>
+    <script>
+        // Apply saved theme before render to avoid a flash; default to dark.
+        (function () {
+            var t = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+    <link rel="stylesheet" href="../theme.css">
 </head>
 <body>
     <div class="header">
         <a href="../" class="back-button">Back to Downloads</a>
-        <h1>AliasVault Translation Test Builds</h1>
-        <div style="width: 140px;"></div>
+        <a href="https://www.aliasvault.com/" class="logo" aria-label="AliasVault home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 500" role="img" aria-label="AliasVault"><path d="m459.87 294.95c0.016205 5.4005 0.03241 10.801-0.35022 16.873-1.111 6.3392-1.1941 12.173-2.6351 17.649-10.922 41.508-36.731 69.481-77.351 83.408-7.2157 2.4739-14.972 3.3702-22.479 4.995-23.629 0.042205-47.257 0.11453-70.886 0.12027-46.762 0.011322-93.523-0.01416-140.95-0.43411-8.59-2.0024-16.766-2.8352-24.398-5.3326-21.595-7.0666-39.523-19.656-53.708-37.552-10.227-12.903-17.579-27.17-21.28-43.221-1.475-6.3967-2.4711-12.904-3.6852-19.361-0.051849-5.747-0.1037-11.494 0.26915-17.886 4.159-42.973 27.68-71.638 63.562-92.153 0-0.70761-0.001961-1.6988 3.12e-4 -2.69 0.022484-9.8293-1.3071-19.894 0.35664-29.438 3.2391-18.579 11.08-35.272 23.763-49.773 12.098-13.832 26.457-23.989 43.609-30.029 7.813-2.7512 16.14-4.0417 24.234-5.9948 7.392-0.025734 14.784-0.05146 22.835 0.32253 4.1959 0.95392 7.7946 1.2538 11.258 2.1053 17.16 4.2192 32.287 12.176 45.469 24.104 2.2558 2.0411 4.372 6.6241 9.621 3.868 16.839-8.8419 34.718-11.597 53.603-8.594 16.791 2.6699 31.602 9.4308 44.236 20.636 11.531 10.227 19.84 22.841 25.393 37.236 6.3436 16.445 10.389 33.163 6.0798 49.389 7.9587 8.9321 15.807 16.704 22.421 25.414 9.162 12.065 15.33 25.746 18.144 40.776 0.97046 5.1848 1.9111 10.375 2.8654 15.563m-71.597 71.012c5.5615-5.2284 12.002-9.7986 16.508-15.817 10.474-13.992 14.333-29.916 11.288-47.446-2.2496-12.95-8.1973-24.076-17.243-33.063-12.746-12.663-28.865-18.614-46.786-18.569-69.912 0.17712-139.82 0.56831-209.74 0.96176-15.922 0.089599-29.168 7.4209-39.685 18.296-14.45 14.944-20.408 33.343-16.655 54.368 2.2763 12.754 8.2167 23.748 17.158 32.66 13.299 13.255 30.097 18.653 48.728 18.651 59.321-0.005188 118.64 0.042358 177.96-0.046601 9.5912-0.014374 19.181-0.86588 28.773-0.88855 10.649-0.025146 19.978-3.825 29.687-9.1074z" fill="#EEC170"></path><path d="m162.77 293c15.654 4.3883 20.627 22.967 10.304 34.98-5.3104 6.1795-14.817 8.3208-24.278 5.0472-7.0723-2.4471-12.332-10.362-12.876-17.933-1.0451-14.542 11.089-23.176 21.705-23.046 1.5794 0.019287 3.1517 0.61566 5.1461 0.95184z" fill="#EEC170"></path><path d="m227.18 293.64c7.8499 2.3973 11.938 8.2143 13.524 15.077 1.8591 8.0439-0.44817 15.706-7.1588 21.121-6.7633 5.4572-14.417 6.8794-22.578 3.1483-8.2972-3.7933-12.836-10.849-12.736-19.438 0.1687-14.497 14.13-25.368 28.948-19.908z" fill="#EEC170"></path><path d="m261.57 319.07c-2.495-14.418 4.6853-22.603 14.596-26.108 9.8945-3.4995 23.181 3.4303 26.267 13.779 4.6504 15.591-7.1651 29.064-21.665 28.161-8.5254-0.53088-17.202-6.5094-19.198-15.831z" fill="#EEC170"></path><path d="m336.91 333.41c-9.0175-4.2491-15.337-14.349-13.829-21.682 3.0825-14.989 13.341-20.304 23.018-19.585 10.653 0.79141 17.93 7.407 19.765 17.547 1.9588 10.824-4.1171 19.939-13.494 23.703-5.272 2.1162-10.091 1.5086-15.46 0.017883z" fill="#EEC170"></path><text x="550" y="355" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="290" letter-spacing="-7" fill="currentColor">AliasVault</text></svg>
+        </a>
+        <button type="button" class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark theme" title="Toggle light/dark theme"></button>
     </div>
 
     <div class="section">
@@ -136,7 +37,7 @@
 
         <p><strong>(1) Web App Testing:</strong></p>
         <p>Translations for the web app can be tested in a special testing environment that gets refreshed 1-2 hours after translations have been added in Crowdin. Press the button below to go to the web app testing environment. Note: this environment is clean so you will need to create a new account in order to test.</p>
-        <a href="https://i18n.aliasvault.net" class="test-link">Test Web App → i18n.aliasvault.net</a>
+        <a href="https://i18n.aliasvault.com" class="test-link">Test Web App → i18n.aliasvault.com</a>
 
         <p style="margin-top: 20px;"><strong>(2) Browser Extension & (3) Mobile Apps:</strong></p>
         <p>For the browser extension and mobile apps, special nightly builds are generated automatically several times per day that contain the latest translations. These builds are available for download below and can be installed manually. It can take up to 6 hours for builds to be refreshed after making changes in Crowdin.</p>
@@ -144,14 +45,22 @@
 
     <div class="section">
         <h2>Available test builds</h2>
-        <p>Browse and download the latest versions with their build dates (UTC). For information on how to manually install the browser extension and mobile apps, see the technical <a href="https://docs.aliasvault.net/">documentation</a>.</p>
-        <div class="note" style="background: #fff3cd; border-left-color: #ffc107; margin-top: 15px;">
-            <strong>⚠️ Important warning:</strong> Some beta app versions may contain data model updates. We strongly recommend using a <strong>test account</strong> instead of your real account. You can use a test account either on the <a href="https://i18n.aliasvault.net/api" class="link">i18n.aliasvault.net/api</a> test API server or on the <a href="https://aliasvault.net" class="link">aliasvault.net</a> production server. Do not use your real account, as updating your vault with these beta builds may prevent you from logging in with the current live apps.
+        <p>Browse and download the latest versions with their build dates (UTC). For information on how to manually install the browser extension and mobile apps, see the technical <a href="https://docs.aliasvault.com/">documentation</a>.</p>
+        <div class="note warning">
+            <strong>⚠️ Important warning:</strong> Some beta app versions may contain data model updates. We strongly recommend using a <strong>test account</strong> instead of your real account. You can use a test account either on the <a href="https://i18n.aliasvault.com/api" class="link">i18n.aliasvault.com/api</a> test API server or on the <a href="https://aliasvault.com" class="link">aliasvault.com</a> production server. Do not use your real account, as updating your vault with these beta builds may prevent you from logging in with the current live apps.
         </div>
         <div class="note">
             <strong>Note:</strong> When manually installing the Android app APK, you will need to uninstall the existing app (installed via the Google Play Store) first.
         </div>
         <iframe src="/i18n/files/" title="Translation Build Files"></iframe>
     </div>
+
+    <script>
+        function toggleTheme() {
+            var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+        }
+    </script>
 </body>
 </html>
